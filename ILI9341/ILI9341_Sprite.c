@@ -14,11 +14,11 @@ void ILI9341_Draw_Sprite(const uint16_t *SPRITE, uint16_t WIDTH, uint16_t HEIGHT
     {
         for (uint16_t x = WIDTH - half_width; x > 0; x--)
         {
-            ILI9341_Draw_Pixel(X + x, Y - y, SPRITE[pixel--]);
+            ILI9341_Draw_Pixel(Y - y, X + x, SPRITE[pixel--]);
         }
         for (uint16_t x = 0; x < half_width; x++)
         {
-            ILI9341_Draw_Pixel(X - x, Y - y, SPRITE[pixel--]);
+            ILI9341_Draw_Pixel(Y - y, X - x, SPRITE[pixel--]);
         }
     }
     pixel = (half_height * WIDTH);
@@ -27,11 +27,11 @@ void ILI9341_Draw_Sprite(const uint16_t *SPRITE, uint16_t WIDTH, uint16_t HEIGHT
     {
         for (uint16_t x = half_width - 1; x >= 0; x--)
         {
-            ILI9341_Draw_Pixel(X - x, Y + y, SPRITE[pixel++]);
+            ILI9341_Draw_Pixel(Y + y, X - x, SPRITE[pixel++]);
         }
         for (uint16_t x = 1; x <= WIDTH - half_width; x++)
         {
-            ILI9341_Draw_Pixel(X + x, Y - y, SPRITE[pixel++]);
+            ILI9341_Draw_Pixel(Y + y, X + x, SPRITE[pixel++]);
         }
     }
 }
